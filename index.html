@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce</title>
+  <style>
+    html,body{
+      height: 100%;
+    }
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    ul{
+      list-style: none;
+    }
+    body{
+      font-size: 1rem;
+      line-height: 1.6;
+      background-color: white;
+      color: white;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    header{
+      background-image: linear-gradient(to bottom right, #39E5B6, #70B2D9);
+      height: 80px;
+    }
+    nav{
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .menu > li, .menu > a{
+      justify-content: center;
+      text-align: center;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .menu a{
+      text-decoration: none;
+      color: #fff;
+      display: block;
+      padding: 10px 1.5rem;
+      transition: background-color .22 ease, color .22 ease;
+    }
+    .menu a:hover{
+      border: 1px solid white;
+      border-radius: 3px;
+    }
+    .submenu{
+      position: absolute;
+      background-image: linear-gradient(to bottom right, #39E5B6, #70B2D9);
+      width: 140px;
+      display: none;
+    }
+    .submenu a{
+      display: inline-block;
+      position: relative;
+      color: #fff;
+    }
+    .submenu a::after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #0087ca;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .submenu a:hover::after{
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .submenu2{
+      position: absolute;
+      left: 100%;
+      width: 140px;
+      top:0;
+      background-image: linear-gradient(to bottom right, #39E5B6, #70B2D9);
+      display: none;
+    }
+    .submenu a:hover{
+      border: none;
+    }
+    .menu > li:hover > .submenu{
+      display: block;
+    }
+    .submenu >li:hover > .submenu2{
+      display: block;
+    }
+    .search-box{
+      margin: 10px;
+      width: fit-content;
+      height: fit-content;
+      position: relative;
+    }
+    .input-search{
+      height: 50px;
+      width: 50px;
+      border-style: none;
+      padding: 10px;
+      font-size: 18px;
+      letter-spacing: 2px;
+      outline: none;
+      border-radius: 25px;
+      transition: all .5s ease-in-out;
+      background-color: #06aebe;
+      padding-right: 40px;
+      color:#fff;
+    } 
+    .input-search::placeholder{
+      color:rgba(255,255,255,.5);
+      font-size: 18px;
+      letter-spacing: 2px;
+      font-weight: 100;
+    }
+    .btn-search{
+      width: 50px;
+      height: 50px;
+      border-style: none;
+      font-size: 20px;
+      font-weight: bold;
+      outline: none;
+      cursor: pointer;
+      border-radius: 4;
+      position: absolute;
+      right: 0px;
+      color:#ffffff ;
+      background-color:transparent;
+      pointer-events: painted;  
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .btn-search:focus ~ .input-search{
+      width: 300px;
+      border-radius: 0px;
+      background-color: transparent;
+      border-bottom:1px solid rgba(255,255,255,.5);
+      transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+    }
+    .input-search:focus{
+      width: 300px;
+      border-radius: 0px;
+      background-color: transparent;
+      border-bottom:1px solid rgba(255,255,255,.5);
+      transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1 class="logo">MyShop</h1>
+      <div class="search-box">
+        <button class="btn-search"><i class="fas fa-search"></i>Search</button>
+        <input type="text" class="input-search" placeholder="Type to Search...">
+      </div>
+      <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Electonics</a>
+          <ul class="submenu">
+            <li><a href="#">Mobile</a>
+              <ul class="submenu2">
+                <li><a href="#">Redmi</a></li>
+                <li><a href="#">Apple</a></li>
+                <li><a href="#">Samsung</a></li>
+                <li><a href="#">Oppo</a></li>
+                <li><a href="#">Vivo</a></li>
+              </ul>
+            </li>
+            <li><a href="#">TV</a>
+              <ul class="submenu2">
+                <li><a href="#">Samsung</a></li>
+                <li><a href="#">Realme</a></li>
+                <li><a href="#">LG</a></li>
+                <li><a href="#">Zebronic</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Laptops</a>
+              <ul class="submenu2">
+                <li><a href="#">Dell</a></li>
+                <li><a href="#">HP</a></li>
+                <li><a href="#">Apple</a></li>
+                <li><a href="#">Aser</a></li>
+                <li><a href="#">Redmi Book</a></li>
+
+              </ul>
+            </li>
+            <li><a href="#">Acceorise</a>
+              <ul class="submenu2">
+                <li><a href="#">Cable</a></li>
+                <li><a href="#">Headphone</a></li>
+                <li><a href="#">Powerbank</a></li>
+                <li><a href="#">Speaker</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#">Clothing</a>
+          <ul class="submenu">
+            <li><a href="#">Men's Wear</a>
+              <ul class="submenu2">
+                <li><a href="#">Shirts</a></li>
+                <li><a href="#">Jeans</a></li>
+                <li><a href="#">T-Shirts</a></li>
+                <li><a href="#">Jackets</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Women's Wear</a>
+              <ul class="submenu2">
+                <li><a href="#">Kurtas</a></li>
+                <li><a href="#">Jeans</a></li>
+                <li><a href="#">Suits</a></li>
+                <li><a href="#">Jackets</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Boys</a>
+              <ul class="submenu2">
+                <li><a href="#">Shirts</a></li>
+                <li><a href="#">Jeans</a></li>
+                <li><a href="#">T-Shirts</a></li>
+                <li><a href="#">Jackets</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Girls</a>
+              <ul class="submenu2">
+                <li><a href="#">Tops</a></li>
+                <li><a href="#">Jeans</a></li>
+                <li><a href="#">Kurtas</a></li>
+                <li><a href="#">Jackets</a></li>
+              </ul></li>
+          </ul>
+        </li>
+        <li><a href="#">Footwear</a>
+          <ul class="submenu">
+            <li><a href="#">Casual</a>
+              <ul class="submenu2">
+                <li><a href="#">Bata</a></li>
+                <li><a href="#">lee-Coper</a></li>
+                <li><a href="#">Jack&Jonas</a></li>
+                <li><a href="#">Hevanii</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Sports</a>
+              <ul class="submenu2">
+                <li><a href="#">Nike</a></li>
+                <li><a href="#">Addidas</a></li>
+                <li><a href="#">New Balance</a></li>
+                <li><a href="#">Skeachers</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Filp-Flop</a>
+              <ul class="submenu2">
+                <li><a href="#">Spark</a></li>
+                <li><a href="#">Nike</a></li>
+                <li><a href="#">Puma</a></li>
+                <li><a href="#">Reebok</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#">Furniture</a>
+          <ul class="submenu">
+            <li><a href="#">Tables</a></li>
+            <li><a href="#">Chairs</a></li>
+            <li><a href="#">Beds</a></li>
+            <li><a href="#">Doors</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</body>
+</html>
